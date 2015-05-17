@@ -1,0 +1,73 @@
+<script>
+  function mafonction()
+  {
+    var obj = document.getElementById("name");
+    var obj1 = document.getElementById("surname");
+    var obj2 = document.getElementById("id");
+    var obj3 = document.getElementById("email");
+    var obj4 = document.getElementById("website");
+    var obj5 = document.getElementById("createdat");
+    var obj6 = document.getElementById("updatedat");
+    window.location="#/usersss/" + obj.value + "&" + obj1.value + "&" + obj2.value+ "&" + obj3.value+ "&" + obj4.value+ "&" + obj5.value+ "&" + obj6.value + "&put";
+  }
+
+  function mafonction1()
+  {
+    var obj = document.getElementById("role");
+    var obj1 = document.getElementById("project");
+    var obj2 = document.getElementById("id");
+
+    window.location="#/usersssss/" + obj2.value + "&" + obj.value + "&" + obj1.value+  "&link";
+  }
+
+</script>
+
+  <div>
+  <p><a href="/#/users">Return</a></p>
+
+  <form>
+    <fieldset>
+      <legend>More information and modification:</legend>
+      Name:<br>
+      <input type="text" name="name" id="name" value="{{currentUser.name}}">
+      <br>
+      Surname:<br>
+      <input type="text" name="surname" id="surname" value="{{currentUser.surname}}">
+      <br><br>
+      ID:<br>
+      <input type="text" name="id" id="id" value="{{currentUser.id}}">
+      <br><br>
+      Email:<br>
+      <input type="text" name="email" id="email" value="{{currentUser.email}}">
+      <br><br>
+      Website:<br>
+      <input type="text" name="website" id="website" value="{{currentUser.website}}">
+      <br><br>
+      Created at:<br>
+      <input type="text" name="createdat" id="createdat" value="{{currentUser.createdAt}}">
+      <br><br>
+      Updated at:<br>
+      <input type="text" name="updatedat" id="updatedat" value="{{currentUser.updatedAt}}">
+      <br><br>
+      <a href="javascript:mafonction()">Submit</a></fieldset>
+  </form>
+    <form>
+      <br><br>
+      <fieldset>
+        <legend>Add Role:</legend>
+        Role:<br>
+      <input type="text" name="name" id="role">
+      <br><br>
+        Id Project:<br>
+      <input type="text" name="name" id="project">
+      <br><br>
+      <a href="javascript:mafonction1()">Create</a></fieldset>
+    </form>
+    <br>
+    <h3>List of roles and link to projects:</h3>
+    <ul>
+      <li ng-repeat="user in userss"><a href="/#/projects/{{user.ProjectId}}&see"> {{user.name}}</a></li>
+    </ul>
+  <br>
+  <p><a href="/#/users/{{currentUser.id}}&del">delete</a></p>
+</div>

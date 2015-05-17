@@ -1,0 +1,40 @@
+<script>
+  function mafonction()
+  {
+    var obj = document.getElementById("name");
+    var obj1 = document.getElementById("description");
+    window.location="#/projectss/" + obj.value + '&' + obj1.value + "&new";
+  }
+
+  function mafonction1()
+  {
+    var obj = document.getElementById("namee");
+    window.location="#/projectssss/" + obj.value + "&seek";
+  }
+
+</script>
+
+<div>
+  <form action="/#/projects/">
+    <fieldset>
+      <legend>New projects:</legend>
+      Title:<br>
+      <input type="text" name="name" id="name" value="{{currentProjects.title}}">
+      <br>
+      Description:<br>
+      <input type="text" name="surnamename" id="description" value="{{currentProjects.description}}">
+      <br><br>
+      <a href="javascript:mafonction()">Submit</a></fieldset>
+  </form>
+  <form>
+    Find Project:<br><br>
+    <input type="text" name="name" id="namee">
+    <br><br>
+    <a href="javascript:mafonction1()">Find</a>
+  </form>
+  <br>
+  <h3>List of projects:</h3>
+  <ul>
+    <li ng-repeat="project in projects"><a href="/#/projects/{{project.id}}&see"> {{project.title}},{{project.description}} </a></li>
+  </ul>
+</div>

@@ -1,0 +1,69 @@
+<script>
+  function mafonction()
+  {
+    var obj = document.getElementById("title");
+    var obj1 = document.getElementById("id");
+    var obj2 = document.getElementById("description");
+    var obj3 = document.getElementById("year");
+    var obj4 = document.getElementById("createdat");
+    var obj5 = document.getElementById("updatedat");
+    window.location="#/projectsss/" + obj.value + "&" + obj1.value + "&" + obj2.value+ "&" + obj3.value+ "&" + obj4.value+ "&" + obj5.value + "&put";
+  }
+
+  function mafonction1()
+  {
+    var obj = document.getElementById("role");
+    var obj1 = document.getElementById("project");
+    var obj2 = document.getElementById("id");
+
+    window.location="#/usersssss/" + obj1.value + "&" + obj.value + "&" + obj2.value+  "&link";
+  }
+
+</script>
+
+<div>
+  <p><a href="/#/projects">Return</a></p>
+
+  <form>
+    <fieldset>
+      <legend>More information and modification:</legend>
+      Title:<br>
+      <input type="text" name="name" id="title" value="{{currentProjects.title}}">
+      <br>
+      ID:<br>
+      <input type="text" name="id" id="id" value="{{currentProjects.id}}">
+      <br><br>
+      Description:<br>
+      <input type="text" name="surnamename" id="description" value="{{currentProjects.description}}">
+      <br><br>
+      Year:<br>
+      <input type="text" name="year" id="year" value="{{currentProjects.year}}">
+      <br><br>
+      Created at:<br>
+      <input type="text" name="createdat" id="createdat" value="{{currentProjects.createdAt}}">
+      <br><br>
+      Updated at:<br>
+      <input type="text" name="updatedat" id="updatedat" value="{{currentProjects.updatedAt}}">
+      <br><br>
+      <a href="javascript:mafonction()">Submit</a></fieldset>
+  </form>
+  <form>
+    <br><br>
+    <fieldset>
+      <legend>Add Role:</legend>
+      Role:<br>
+    <input type="text" name="name" id="role">
+    <br><br>
+      Id User:<br>
+    <input type="text" name="name" id="project">
+    <br><br>
+    <a href="javascript:mafonction1()">Create</a></fieldset>
+  </form>
+  <br>
+  <h3>List of roles and link to users:</h3>
+  <ul>
+    <li ng-repeat="project in projectss"><a href="/#/users/{{project.UserId}}&see"> {{project.name}},{{project.surname}}  </a></li>
+  </ul>
+  <br>
+  <p><a href="/#/projects/{{currentProjects.id}}&del">delete</a></p>
+</div>
